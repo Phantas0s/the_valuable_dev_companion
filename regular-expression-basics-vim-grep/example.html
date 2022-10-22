@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-us" data-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="https://thevaluable.dev/images/2022/file_management_terminal/removing_home.jpg"/>
+        <meta name="twitter:title" content="File Management Tools for Your Favorite Shell"/>
+        <meta name="twitter:site" content="@Cneude_Matthieu"/>
+        <meta property="og:title" content="File Management Tools for Your Favorite Shell" />
+        <meta property="og:site_name" content="The Valuable Dev" />
+        <meta property="og:url" content="https://thevaluable.dev/file-management-tools-linux-shell/" />
+        <meta property="og:type" content="article" />
+        <meta property="og:" content="unknown" />
+        <meta property="article:published_time" content="2022-08-27T00:00:00Z" />
+        <meta property="article:tag" content="Mouseless" />
+        <meta property="article:tag" content="Tools" />
+        <title>File Management Tools for Your Favorite Shell</title>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://thevaluable.dev/images/favicon.png" rel="shortcut icon" >
+        <link href="https://thevaluable.dev/images/apple-touch-icon.png"  rel="apple-touch-icon" />
+        <link href="https://thevaluable.dev/index.xml" type="application/rss+xml" title="The Valuable Dev" rel="alternate" />
+        <meta name="generator" content="Hugo 0.104.2" />
+        <link href="https://thevaluable.dev/file-management-tools-linux-shell/" rel="canonical" />
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "File Management Tools for Your Favorite Shell",
+            "name": "File Management Tools for Your Favorite Shell",
+            "timeRequired": "PT20M",
+            "inLanguage": {
+                "@type": "Language",
+                "alternateName": "en"
+            },
+            "datePublished": "2022-08-27T00:00Z",
+            "dateModified": "2022-08-27T00:00Z",
+            "keywords": "Mouseless, Tools",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "http:\/\/thevaluable.dev\/file-management-tools-linux-shell\/"
+            }
+        }
+        </script>
+    </head>
+    <body class="nav-closed">
+        <div class="nav">
+            <h3 class="nav-title nav-main-title">Menu</h3>
+            <a href="#" class="nav-close">
+                <i class="la la-times-circle"></i>
+            </a>
+            <ul>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/">*Home*</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/post/">*All Articles*</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/page/newsletter/">*Lets Connect*</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/page/books/">*Books*</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/page/support/">*Support*</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/page/about">*About*</a>
+                </li>
+                <hr class="separation"/>
+                <h3 class="nav-title nav-sub">Categories</h3>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/tags/complexity">Complexity</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/tags/fundamentals">Fundamentals</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/tags/mouseless">Mouseless</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/tags/vim">Vim</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/tags/soft-skills">Soft Skills</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/tags/learning">Learning</a>
+                </li>
+                <li class="nav-opened" role="presentation">
+                    <a href="https://thevaluable.dev/tags/side-project">Side Projects</a>
+                </li>
+            </ul>
+            <a class="subscribe-button" href="https://thevaluable.dev/index.xml"><i class="la la-feed"></i>&nbsp;&nbsp;RSS</a> </div>
+        </div>
+        <span class="nav-cover"></span>
+        <div class="site-wrapper">
+            <aside class="table-of-content tob-closed">
+                <a href="#" class="tob-close">
+                    <span class="hidden">Close</span>
+                </a>
+                <nav id="TableOfContents">
+                    <ul>
+                        <li><a href="#the-basics-of-file-management-in-the-shell">The Basics of File Management in the Shell</a>
+                            <ul>
+                                <li><a href="#common-tools">Common Tools</a></li>
+                                <li><a href="#documentation">Documentation</a></li>
+                                <li><a href="#best-practices">Best Practices</a></li>
+                                <li><a href="#the-shell-chainsaw">The Shell Chainsaw</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#other-minimal-tools">Other Minimal Tools</a>
+                            <ul>
+                                <li><a href="#whats-better-than-a-tree">What&rsquo;s Better Than a tree?</a></li>
+                                <li><a href="#when-you-search-you-must-find">When You Search, You Must find</a></li>
+                                <li><a href="#fuzzy-find-with-fzf">Fuzzy Find with fzf</a></li>
+                                <li><a href="#file-management-in-your-editor">File Management in Your Editor</a></li>
+                                <li><a href="#the-venerable-tmux">The Venerable tmux</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#visualize-your-filesystem-with-tuis">Visualize Your Filesystem with TUIs</a>
+                            <ul>
+                                <li><a href="#vim-with-netrw">Vim with netrw</a></li>
+                                <li><a href="#vifm">vifm</a></li>
+                                <li><a href="#ranger">Ranger</a></li>
+                                <li><a href="#nnn">nnn</a></li>
+                                <li><a href="#rover">Rover</a></li>
+                                <li><a href="#gnu-midnight-commander">GNU Midnight Commander</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#bookmark-file-managers">Bookmark File Managers</a>
+                            <ul>
+                                <li><a href="#z">z</a></li>
+                                <li><a href="#bashmarks">Bashmarks</a></li>
+                                <li><a href="#bm">bm</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#master-of-your-filesystem">Master of Your Filesystem</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <span class="table-of-content-cover"></span>
+            <header class="main-header post-head no-cover">
+                <a class="blog-title" href="https://thevaluable.dev/">The Valuable Dev</a>
+                <ul class="header-menu">
+                    <li><a href="https://thevaluable.dev/page/newsletter" ><i class="la la-envelope"></i><span class="text">Let's Connect</span></a></li>
+                    <li><a href="https://thevaluable.dev/page/books" ><i class="la la-book"></i><span class="text">Books</span></a></li>
+                    <li><a href="https://thevaluable.dev/page/support"><i class="la la-heart-o"></i><span class="text">Support</span></a></li>
+                    <li><a href="https://thevaluable.dev/page/about"><i class="la la-grin-wink"></i><span class="text">About</span></a></li>
+                </ul>
+                <nav class="page-nav clearfix">
+                    <a id="light-button" class="light-button icon-button" href="#"><i class="la la-moon-o"></i></a>
+                    <a class="tob-button icon-button" href="#"><i class="la la-list"></i></a>
+                    <a class="toggle-search icon-button" title="search">
+                        <i class="la la-search">2022.01</i>
+                    </a>
+                </nav>
+            </header>
+            <aside role="search">
+                <a href="#" class="close toggle-search">
+                    <i class="la la-times-circle"></i>
+                </a>
+                <div class="search-wrapper">
+                    <form class="search" method="get">
+                        <input type="search" placeholder="search..." disabled="disabled" />
+                    </form>
+                </div>
+                <div class="search-results list">
+                </div>
+            </aside>
+            <div><div>
+            <main class="content" role="main">
+                <article class="post post">
+                    <header class="post-header">
+                        <section class="post-meta">
+                            <div class="li-date">
+                                <time class="post-date" datetime="2022-08-27T00:00:00Z">
+                                    27 Aug 2022
+                                </time>
+                            </div>
+                            <span class="post-tag small"><a href="https://thevaluable.dev//tags/mouseless/">#Mouseless</a></span>
+                            <span class="post-tag small"><a href="https://thevaluable.dev//tags/tools/">#Tools</a></span>
+                        </section>
+                        <h1 class="post-title">File Management Tools for Your Favorite Shell</h1>
+                    </header>
+                    <section class="post-content">
+                    </section>
+                    <footer class="post-footer">
+                    </footer>
+                </article>
+            </main>
+            <aside class="read-next" id="read-next">
+                <a class="read-next-story" href="https://thevaluable.dev/vim-advanced/" style="background-image: url(/images/2021/02_vim_advanced/vim-advanced.webp)">
+                    <section class="post">
+                        <h2>A Vim (or Neovim) Guide for Advanced Users</h2>
+                    </section>
+                </a>
+                <a class="read-next-story prev" href="https://thevaluable.dev/vim-intermediate/" style="background-image: url(/images/2020/vim_intermediate/vim_coffee.webp)">
+                    <section class="post">
+                        <h2>A Vim (or Neovim) Guide for Intermediate Users</h2>
+                    </section>
+                </a>
+            </aside>
+            <div><div>
+            <footer class="site-footer">
+                <section class="copyright"><a href="">The Valuable Dev</a> All right reserved - 2022.010000</section>
+                <section class="social">
+                    <a class="bloglogo" href="https://thevaluable.dev//page/newsletter" target="_blank">
+                        <span class="la la-envelope"></span>
+                    </a>
+                    <a class="bloglogo" href="https://github.com/phantas0s" target="_blank">
+                        <span class="la la-github"></span>
+                    </a>
+                    <a class="bloglogo" href="https://youtube.com/channel/UCoJtk2M8bme9KXTe6F3K-Yg" target="_blank">
+                        <span class="la la-youtube"></span>
+                    </a>
+                    <a class="bloglogo" href="https://twitter.com/Cneude_Matthieu" target="_blank">
+                        <span class="la la-twitter"></span>
+                    </a>
+                        <span class="la la-linkedin"></span>
+                    </a>
+                    <a class="bloglogo" href='https://thevaluable.dev/index.xml' target='blank'>
+                        <span class="la la-feed"></span>
+                    </a>
+                </section>
+                <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a></section>
+            </footer>
+        </div>
+        <link href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" media="none" onload="this.media='screen';" rel="stylesheet">
+    </body>
+</html>
