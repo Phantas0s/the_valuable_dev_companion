@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-selection=$(
-find -type d | fzf --multi --height=50% --border=sharp \
---preview='tree -C {}' --preview-window='30%,border-sharp' \
+selection=$(find -type d | fzf --multi --height=80% --border=sharp \
+--preview='tree -C {}' --preview-window='45%,border-sharp' \
 --prompt='Dirs > ' \
 --bind='del:execute(rm -ri {+})' \
 --bind='ctrl-p:toggle-preview' \
@@ -21,10 +20,11 @@ CTRL-D to display directories | CTRL-F to display files
 CTRL-A to select all | CTRL-x to deselect all
 ENTER to edit | DEL to delete
 CTRL-P to toggle preview
-')
+'
+)
 
 if [ -d "$selection" ]; then
-    cd "$selection"
+    cd "$selection" || exit
 else
     eval "$EDITOR $selection"
 fi
