@@ -1,0 +1,10 @@
+---
+title: The Life Of Penguins
+author: The Penguin Lover
+rights: Copyright © 2020 Mr. Penguin
+lang: en-US
+
+# Filter preferences:
+# - pandoc-crossref
+linkReferences: true
+---

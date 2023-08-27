@@ -1,0 +1,41 @@
+% Background for the inline code
+\usepackage{fancyvrb,xcolor,newverbs,xpatch,listings,realboxes}
+
+\definecolor{cverbbg}{HTML}{F7FAFB}
+
+% Useful when NOT using --listings
+% https://tex.stackexchange.com/questions/357227/adding-background-color-to-verb-or-lstinline-command-without-colorbox
+\makeatletter
+\xpretocmd\lstinline{\Colorbox{cverbbg}\bgroup\appto\lst@DeInit{\egroup}}{}{}
+\makeatother
+
+% https://tex.stackexchange.com/questions/466727/how-can-i-wrap-colorbox-around-verbcommandchars-by-only-changing 
+% % For inline code without options
+
+% \let\oldtexttt\texttt
+% \renewcommand{\texttt}[1]{
+%   \colorbox{cverbbg}{\oldtexttt{#1}}
+% }
+
+% % For inline code with options
+
+% \makeatletter
+% \let\FV@CMD\relax
+% \define@key{FV}{wrapwith}[\relax]{\def\FV@CMD{#1}}
+% \begingroup
+% \catcode`\^^M=\active%
+% \gdef\FVC@Verb#1{%
+%   \begingroup%
+%     \FV@UseKeyValues%
+%     \FV@FormattingPrep%
+%     \FV@CatCodes%
+%     \outer\def^^M{}%
+%     \catcode`#1=12%
+%     \def\@tempa{\def\FancyVerbGetVerb####1####2}%
+%     \expandafter\@tempa\string#1{\mbox{\FV@CMD{##2}}\endgroup}%
+%     \FancyVerbGetVerb\FV@EOL}%
+% \endgroup
+% \makeatother
+
+% \fvset{wrapwith=\colorbox{cverbbg}}
+
