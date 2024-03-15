@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# An explorer
+
 selection=$(find -type d | fzf --multi --height=80% --border=sharp \
 --preview='tree -C {}' --preview-window='45%,border-sharp' \
 --prompt='Dirs > ' \
@@ -28,3 +30,7 @@ if [ -d "$selection" ]; then
 else
     eval "$EDITOR $selection"
 fi
+
+# Another comment
+
+
