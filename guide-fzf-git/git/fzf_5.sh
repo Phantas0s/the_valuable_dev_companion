@@ -1,4 +1,4 @@
-# Version 5
+#!/usr/bin/env bash
 
 function fgf() {
 	local -r prompt_add="Add > "
@@ -7,10 +7,7 @@ function fgf() {
 	local -r git_root_dir=$(git rev-parse --show-toplevel)
 	local -r git_unstaged_files="git ls-files --modified --deleted --other --exclude-standard --deduplicate $git_root_dir"
 
-	local git_staged_files
-	read -r -d '' git_staged_files <<-'EOF'
-		git status --short | grep "^[A-Z]" | awk "{print \$NF}"
-	EOF
+	local git_staged_files='git status --short | grep "^[A-Z]" | awk "{print \$NF}"'
 
 	local -r git_reset="git reset -- {+}"
 	local -r enter_cmd="($git_unstaged_files | grep {} && git add {+}) || $git_reset"
@@ -25,7 +22,6 @@ function fgf() {
 		> ALT-C to commit | ALT-A to append to the last commit
 		EOF
 	)
-
 
 	local -r add_header=$(cat <<-EOF
 		$header
